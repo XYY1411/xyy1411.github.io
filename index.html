@@ -21,9 +21,15 @@
 	<link rel="shortcut icon" href="/favicon.ico" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/XYY1411/cdn/Homepage/assets/css/main.min.css" />
 	<noscript>
-		<link rel="stylesheet"
-			href="https://cdn.jsdelivr.net/gh/XYY1411/cdn/Homepage/assets/css/noscript.min.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/XYY1411/cdn/Homepage/assets/css/noscript.min.css" />
 	</noscript>
+	<script>
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', () => {
+				navigator.serviceWorker.register('/sw.js');
+			});
+		}
+	</script>
 </head>
 
 <body class="is-preload">
