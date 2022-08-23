@@ -56,11 +56,13 @@
                     </nav>
                 </header>
                 <footer id="footer">
-                    <span class="copyright">&copy; 2017 - 2022 XYY1411 | DESIGN: <a href="http://html5up.net">HTML5 UP</a></span>
+                    <span class="copyright">&copy; <div style="display: inline">2017</div> - <div id="ed" style="display: inline"></div> XYY1411 | DESIGN: <a href="http://html5up.net">HTML5 UP</a></span>
                 </footer>
             </div>
         </div>
         <script>
+            let date = new Date();
+            document.getElementById("ed").innerText = date.getFullYear();
             window.onload = function () { document.body.classList.remove('is-preload'); }
             window.ontouchmove = function () { return false; }
             window.onorientationchange = function () { document.body.scrollTop = 0; }
