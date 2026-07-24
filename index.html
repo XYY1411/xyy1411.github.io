@@ -16,9 +16,16 @@
         <meta name="robots" content="all" />
         <meta name="keywords" content="XYY1411" />
         <meta name="description" content="XYY1411 的个人主页" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <meta property="og:title" content="XYY1411" />
+        <meta property="og:description" content="XYY1411 的个人主页" />
+        <meta property="og:image" content="https://www.xyy1411.top/favicon.ico" />
+        <meta property="og:url" content="https://www.xyy1411.top" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/XYY1411/cdn/Homepage/assets/css/main.min.css" />
+        <link rel="stylesheet" href="assets/css/main.min.css" media="print" onload="this.media='all'" />
+        <noscript><link rel="stylesheet" href="assets/css/main.min.css" /></noscript>
         <noscript>
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/XYY1411/cdn/Homepage/assets/css/noscript.min.css" />
         </noscript>
@@ -40,13 +47,13 @@
                     <p>星空在前，路在脚下</p>
                     <nav>
                         <ul>
-                            <li><a href="https://X.com/XYY1411" class="icon brands fa-twitter"><span
+                            <li><a href="https://X.com/XYY1411" class="icon brands fa-twitter" rel="me noopener noreferrer"><span
                                         class="label">Twitter</span></a></li>
-                            <li><a href="https://t.me/XYY1411" class="icon brands fa-telegram-plane"><span
+                            <li><a href="https://t.me/XYY1411" class="icon brands fa-telegram-plane" rel="me noopener noreferrer"><span
                                         class="label">Telegram</span></a></li>
                             <li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=CrbY64daFPCPDXaZr9HFihoG-EsCrQhe&noverify=0"
-                                    class="icon brands fa-qq"><span class="label">QQ</span></a></li>
-                            <li><a href="https://github.com/XYY1411" class="icon brands fa-github"><span
+                                    class="icon brands fa-qq" rel="noopener noreferrer"><span class="label">QQ</span></a></li>
+                            <li><a href="https://github.com/XYY1411" class="icon brands fa-github" rel="me noopener noreferrer"><span
                                         class="label">Github</span></a></li>
                             <li><a href="mailto:xiaoyuyu1411@qq.com" class="icon solid fa-envelope"><span
                                         class="label">Email</span></a></li>
@@ -56,7 +63,7 @@
                     </nav>
                 </header>
                 <footer id="footer">
-                    <span class="copyright">&copy; <div style="display: inline">2017</div> - <div id="ed" style="display: inline"></div> XYY1411 | DESIGN: <a href="http://html5up.net">HTML5 UP</a></span>
+                    <span class="copyright">&copy; <span>2017</span> - <span id="ed">2026</span> XYY1411 | DESIGN: <a href="https://html5up.net" rel="noopener noreferrer">HTML5 UP</a></span>
                 </footer>
             </div>
         </div>
@@ -64,8 +71,7 @@
             let date = new Date();
             document.getElementById("ed").innerText = date.getFullYear();
             window.onload = function () { document.body.classList.remove('is-preload'); }
-            window.ontouchmove = function () { return false; }
-            window.onorientationchange = function () { document.body.scrollTop = 0; }
+            window.addEventListener('orientationchange', function () { document.body.scrollTop = 0; });
         </script>
     </body>
 </html>

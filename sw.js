@@ -1,5 +1,3 @@
-console.clear();
-console.log('Successful registered service worker.');
 importScripts('https://cdn.jsdelivr.net/npm/workbox-sw@6/build/workbox-sw.min.js');
 
 const { core, precaching, routing, strategies, expiration, cacheableResponse, backgroundSync } = workbox;
@@ -7,7 +5,7 @@ const { CacheFirst, NetworkFirst, NetworkOnly, StaleWhileRevalidate } = strategi
 const { ExpirationPlugin } = expiration;
 const { CacheableResponsePlugin } = cacheableResponse;
 
-const cacheSuffixVersion = '-210713';
+const cacheSuffixVersion = '-260724';
 const maxEntries = 100;
 
 self.addEventListener('activate', (event) => {
@@ -28,7 +26,12 @@ core.setCacheNameDetails({
 });
 
 precaching.precacheAndRoute(
-    [],
+    [
+        { url: '/', revision: '260724' },
+        { url: '/index.html', revision: '260724' },
+        { url: '/favicon.ico', revision: null },
+        { url: '/assets/css/main.min.css', revision: '260724' },
+    ],
 );
 
 // math Google Fonts
@@ -161,10 +164,6 @@ routing.registerRoute(
     /.*(?:i|vip[0-9])\.loli\.(?:io|net)/,
     new CacheFirst({
         cacheName: 'img-cache-loli' + cacheSuffixVersion,
-        fetchOptions: {
-            mode: 'cors',
-            credentials: 'omit'
-        },
         plugins: [
             new ExpirationPlugin({
                 maxAgeSeconds: 30 * 24 * 60 * 60,
@@ -178,10 +177,6 @@ routing.registerRoute(
     /.*\.(?:png|jpg|jpeg|svg|gif|webp)/,
     new CacheFirst({
         cacheName: 'img-cache' + cacheSuffixVersion,
-        fetchOptions: {
-            mode: 'cors',
-            credentials: 'omit'
-        },
         plugins: [
             new ExpirationPlugin({
                 maxAgeSeconds: 30 * 24 * 60 * 60,
